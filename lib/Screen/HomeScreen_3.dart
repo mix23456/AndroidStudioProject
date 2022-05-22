@@ -3,6 +3,8 @@ import 'package:newinstal/Screen/HistoryScreen_5.dart';
 import 'package:newinstal/Screen/LoginScreen_1.dart';
 import 'package:newinstal/Screen/TopupScreen_4.dart';
 import 'package:newinstal/Info/info.dart';
+import 'package:newinstal/Widget/status.dart';
+import 'package:newinstal/Widget/wallet.dart';
 import '../Widget/Alertt.dart';
 import 'package:newinstal/Info/History.dart';
 import 'StatusScreen_6.dart';
@@ -97,164 +99,34 @@ class _HomeSCState extends State<HomeSC> {
       ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: <Widget>[
           SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 40),
-                Row(
-                  children: [
-                    Container(
-                        height: 45,
-                        width: 50,
-                        child: Image.asset('assets/image/logominifixed.png')),
-                    SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 200,
-                      child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: colorstatus01),
-                          onPressed: () {
-                            setState(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => StatusSC()));
-                            });
-                          },
-                          child: Text('1 - $status01',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                  ],
-                ),
+                statusbox(
+                    present: '1 - $status01',
+                    backgroundcolor: colorstatus01,
+                    imagepath: 'assets/image/logominifixed.png'),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                        height: 45,
-                        width: 50,
-                        child: Image.asset('assets/image/logominifixed.png')),
-                    SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 200,
-                      child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: colorstatus02),
-                          onPressed: () {},
-                          child: Text('2 - $status02',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                  ],
-                ),
+                statusbox(
+                    present: '2 - $status02',
+                    backgroundcolor: colorstatus02,
+                    imagepath: 'assets/image/logominifixed.png'),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                        height: 45,
-                        width: 50,
-                        child: Image.asset('assets/image/logominifixed.png')),
-                    SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 200,
-                      child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: colorstatus03),
-                          onPressed: () {},
-                          child: Text('3 - $status03',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                  ],
-                ),
+                statusbox(
+                    present: '3 - $status03',
+                    backgroundcolor: colorstatus03,
+                    imagepath: 'assets/image/logominifixed.png'),
                 SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                        height: 45,
-                        width: 50,
-                        child: Image.asset('assets/image/logominifixed.png')),
-                    SizedBox(width: 10),
-                    Container(
-                      height: 45,
-                      width: 200,
-                      child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: colorstatus04),
-                          onPressed: () {},
-                          child: Text('4 - $status04',
-                              style: TextStyle(fontSize: 16))),
-                    ),
-                  ],
-                ),
+                statusbox(
+                    present: '4 - $status04',
+                    backgroundcolor: colorstatus04,
+                    imagepath: 'assets/image/logominifixed.png'),
                 SizedBox(height: 20),
-                Container(
-                  height: 140,
-                  width: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                          width: 2, color: Color.fromRGBO(19, 51, 65, 1))),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(width: 20),
-                            Container(
-                                height: 70,
-                                width: 70,
-                                child: Image.asset(
-                                    'assets/image/walletlogofixed.png')),
-                            SizedBox(width: 10),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 15),
-                                Container(
-                                  height: 25,
-                                  child: Text('Your Curent Wallet',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color.fromRGBO(19, 51, 65, 1),
-                                          fontWeight: FontWeight.bold)),
-                                ),
-                                Container(
-                                  height: 30,
-                                  child: Text('$tokens Tokens',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color.fromRGBO(19, 51, 65, 1),
-                                      )),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 28,
-                        width: 230,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => TopupSC()));
-                            },
-                            child: Text('Top Up your account',
-                                style: TextStyle(fontSize: 16))),
-                      ),
-                    ],
-                  ),
-                ),
+                wallet(),
                 SizedBox(height: 20),
                 Container(
                   height: 155,
