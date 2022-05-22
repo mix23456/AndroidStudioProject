@@ -3,6 +3,7 @@ import 'package:newinstal/Screen/HistoryScreen_5.dart';
 import 'package:newinstal/Screen/LoginScreen_1.dart';
 import 'package:newinstal/Screen/TopupScreen_4.dart';
 import 'package:newinstal/Info/info.dart';
+import 'package:newinstal/Widget/redeem.dart';
 import 'package:newinstal/Widget/status.dart';
 import 'package:newinstal/Widget/wallet.dart';
 import '../Widget/Alertt.dart';
@@ -19,10 +20,8 @@ class HomeSC extends StatefulWidget {
 class _HomeSCState extends State<HomeSC> {
   TextEditingController codeController = TextEditingController();
 
-  DateTime now = DateTime.now();
   info infoClass = info();
   int? tokens;
-  String code = 'freetokens';
   String? status01 = 'Available';
   String? status02 = 'In Process';
   String? status03 = 'In Process';
@@ -128,85 +127,7 @@ class _HomeSCState extends State<HomeSC> {
                 SizedBox(height: 20),
                 wallet(),
                 SizedBox(height: 20),
-                Container(
-                  height: 155,
-                  width: 300,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                          width: 2, color: Color.fromRGBO(19, 51, 65, 1))),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(width: 20),
-                            Container(
-                                height: 80,
-                                width: 80,
-                                child: Image.asset(
-                                    'assets/image/redeemlogofixed.png')),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 20),
-                                Container(
-                                  height: 25,
-                                  child: Text('Redeem Code',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color.fromRGBO(19, 51, 65, 1),
-                                          fontWeight: FontWeight.bold)),
-                                ),
-                                Container(
-                                  height: 30,
-                                  width: 150,
-                                  child: TextField(
-                                    controller: codeController,
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                      contentPadding:
-                                          EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                      hintText: 'code',
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: 28,
-                        width: 230,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              if (codeController.text == code) {
-                                showAlertCurrect(context);
-                                infoClass.infoadd(3);
-                                codeController.text = '';
-                                historyList.add(History(
-                                    data: 'Redeem',
-                                    data2: '3 Tokens Added',
-                                    dateTime: now,
-                                    coloract: Color.fromRGBO(2, 169, 222, 1)));
-                                setState(() {
-                                  tokens = infoClass.infoget();
-                                });
-                              } else
-                                showAlertWrong(context);
-                              codeController.text = '';
-                            },
-                            child:
-                                Text('Redeem', style: TextStyle(fontSize: 16))),
-                      ),
-                    ],
-                  ),
-                ),
+                redeem(),
                 SizedBox(height: 20),
                 Container(
                   height: 28,

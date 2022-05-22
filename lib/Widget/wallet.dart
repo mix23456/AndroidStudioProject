@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import '../Screen/TopupScreen_4.dart';
 
 class wallet extends StatefulWidget {
-  final int? tokens;
-  const wallet({Key? key, required this.tokens}) : super(key: key);
+  const wallet({Key? key}) : super(key: key);
 
   @override
   State<wallet> createState() => _walletState();
@@ -13,9 +12,7 @@ class wallet extends StatefulWidget {
 class _walletState extends State<wallet> {
   @override
   Widget build(BuildContext context) {
-    wallet wallettokens = wallet(
-      tokens: 0,
-    );
+    wallet wallettokens = wallet();
     return Container(
       height: 140,
       width: 300,
@@ -51,7 +48,7 @@ class _walletState extends State<wallet> {
                     ),
                     Container(
                       height: 30,
-                      child: Text('${wallettokens.tokens} Tokens',
+                      child: Text('0 Tokens',
                           style: TextStyle(
                             fontSize: 16,
                             color: Color.fromRGBO(19, 51, 65, 1),
