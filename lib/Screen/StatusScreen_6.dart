@@ -204,7 +204,8 @@ class _StatusSCState extends State<StatusSC> {
                             historyList.add(History(
                                 data: 'Start Washing',
                                 data2: '4 Tokens Used',
-                                dateTime: now));
+                                dateTime: now,
+                                coloract: Color.fromRGBO(234, 130, 121, 1)));
                             startTimer();
                           }
                         },

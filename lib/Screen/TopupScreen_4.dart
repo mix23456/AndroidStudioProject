@@ -127,7 +127,9 @@ class _TopupSCState extends State<TopupSC> {
                                       historyList.add(History(
                                           data: 'Top up',
                                           data2: '999 Tokens Added',
-                                          dateTime: now));
+                                          dateTime: now,
+                                          coloract:
+                                              Color.fromRGBO(2, 169, 222, 1)));
                                       setState(() {
                                         tokens = infoClass.infoget() as int?;
                                       });
@@ -157,7 +159,9 @@ class _TopupSCState extends State<TopupSC> {
                                       historyList.add(History(
                                           data: 'Top up',
                                           data2: '10 Tokens Added',
-                                          dateTime: now));
+                                          dateTime: now,
+                                          coloract:
+                                              Color.fromRGBO(2, 169, 222, 1)));
                                       setState(() {
                                         tokens = infoClass.infoget() as int?;
                                       });
@@ -187,7 +191,9 @@ class _TopupSCState extends State<TopupSC> {
                                       historyList.add(History(
                                           data: 'Top up',
                                           data2: '5 Tokens Added',
-                                          dateTime: now));
+                                          dateTime: now,
+                                          coloract:
+                                              Color.fromRGBO(2, 169, 222, 1)));
                                       setState(() {
                                         tokens = infoClass.infoget();
                                       });
@@ -217,7 +223,9 @@ class _TopupSCState extends State<TopupSC> {
                                       historyList.add(History(
                                           data: 'Top up',
                                           data2: '1 Token Added',
-                                          dateTime: now));
+                                          dateTime: now,
+                                          coloract:
+                                              Color.fromRGBO(2, 169, 222, 1)));
                                       setState(() {
                                         tokens = infoClass.infoget();
                                       });

@@ -320,7 +320,8 @@ class _HomeSCState extends State<HomeSC> {
                                 historyList.add(History(
                                     data: 'Redeem',
                                     data2: '3 Tokens Added',
-                                    dateTime: now));
+                                    dateTime: now,
+                                    coloract: Color.fromRGBO(2, 169, 222, 1)));
                                 setState(() {
                                   tokens = infoClass.infoget();
                                 });

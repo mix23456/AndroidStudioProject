@@ -33,10 +33,12 @@ class HistorySC extends StatelessWidget {
             int reverseIndex = historyList.length - 1 - index;
             return ListTile(
               title: historybox(
-                  date:
-                      '${DateFormat('kk:mm dd MMMM yyyy').format(historyList[reverseIndex].dateTime)}',
-                  activity: '${historyList[reverseIndex].data}',
-                  change: '${historyList[reverseIndex].data2}'),
+                date:
+                    '${DateFormat('kk:mm dd MMMM yyyy').format(historyList[reverseIndex].dateTime)}',
+                activity: '${historyList[reverseIndex].data}',
+                change: '${historyList[reverseIndex].data2}',
+                backgroundcolor: historyList[reverseIndex].coloract,
+              ),
             );
           },
         ),
